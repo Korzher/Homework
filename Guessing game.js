@@ -1,7 +1,7 @@
 let secretNumber;
 let guess;
-var min;
-var max;
+let min;
+let max;
 
 function magicNumber(min, max) {
   secretNumber = Math.floor(min + Math.random() * (max + 1 - min));
