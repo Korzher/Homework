@@ -1,9 +1,9 @@
 let secretNumber;
 let guess;
-var min = 1;
-var max = 100;
+var min;
+var max;
 
-function magicNumber() {
+function magicNumber(min, max) {
   secretNumber = Math.floor(min + Math.random() * (max + 1 - min));
   console.log(`Компьютер 1 (по секрету): Я загадываю число ${secretNumber}`);
   return guessing(min, max);
@@ -12,10 +12,10 @@ function magicNumber() {
 function guessing(min, max) {
   guess = Math.floor((min + max) / 2);
   console.log(`Компьтер 2: Пробую число ${guess}`);
-  return check(guess);
+  return check(guess, min, max);
 }
 
-function check(guess) {
+function check(guess, min, max) {
   if (guess > secretNumber) {
     max = guess;
     console.log("Компьютер 1: Меньше");
@@ -29,4 +29,4 @@ function check(guess) {
   }
 }
 
-magicNumber();
+magicNumber(1, 100);
