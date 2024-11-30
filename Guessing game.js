@@ -4,4 +4,15 @@ function magicNumber(min, max) {
   return Math.floor(magicNumber);
 }
 
-console.log(magicNumber(1, 100));
+function guessing(min, max) {
+  let guess = Math.floor((min + max) / 2);
+  console.log(`Компьтер 2: Пробую число ${guess}`);
+  return check(guess);
+}
+
+function check(guess) {
+  return;
+}
+
+magicNumber(1, 100);
+guessing(1, 100);
