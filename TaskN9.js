@@ -8,12 +8,20 @@ counter++;
 function mySlice(arr, start, end) {
   let result = [];
   let counter = 0;
+
   if (!start) {
     return arr;
   } else if (start >= 0) {
-    for (let i = start; i < end && i < arr.length; i++) {
-      result[counter] = arr[i];
-      counter++;
+    if (end >= 0) {
+      for (let i = start; i < end && i < arr.length; i++) {
+        result[counter] = arr[i];
+        counter++;
+      }
+    } else if (end < 0) {
+      for (let i = start; i < arr.length + end; i++) {
+        result[counter] = arr[i];
+        counter++;
+      }
     }
   } else {
     if (!end) {
