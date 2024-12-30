@@ -12,8 +12,12 @@ function mySlice(arr, start, end) {
   if (!start) {
     return arr;
   } else if (start >= 0) {
+    if (!end) {
+      end = arr.length;
+    }
+
     if (end >= 0) {
-      for (let i = start; i < end && i < arr.length; i++) {
+      for (let i = start; i < end; i++) {
         result[counter] = arr[i];
         counter++;
       }
